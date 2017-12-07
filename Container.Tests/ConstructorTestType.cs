@@ -1,4 +1,4 @@
-﻿namespace Container.Tests
+﻿namespace IoC.Tests
 {
     public class ConstructorTestType : IConstructorTestType
     {

@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace Container.Tests
+namespace IoC.Tests
 {
     public class ContainerTests
     {

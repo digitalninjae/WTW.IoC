@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Container
+namespace IoC
 {
     public class Binding : IBinding
     {

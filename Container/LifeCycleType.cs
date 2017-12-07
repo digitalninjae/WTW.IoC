@@ -1,4 +1,4 @@
-﻿namespace Container
+﻿namespace IoC
 {
     public enum LifeCycleType
     {
