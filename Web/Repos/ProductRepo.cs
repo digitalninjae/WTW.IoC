@@ -6,31 +6,31 @@ namespace Web
 {
     public class ProductRepo : IProductRepo
     {
-        private static readonly List<Product> Products = new List<Product>();
+        private readonly List<Product> _products = new List<Product>();
 
         public IEnumerable<Product> GetAll()
         {
-            return Products;
+            return _products;
         }
 
         public Product Get(int id)
         {
-            return Products.SingleOrDefault(p => p.Id == id);
+            return _products.SingleOrDefault(p => p.Id == id);
         }
 
         public Product Save(Product product)
         {
             if (product.Id == 0)
             {
-                product.Id = Products.Count + 1;
-                Products.Add(product);
+                product.Id = _products.Count + 1;
+                _products.Add(product);
                 return product;
             }
 
-            var update = Products.SingleOrDefault(p => p.Id == product.Id);
+            var update = _products.SingleOrDefault(p => p.Id == product.Id);
             if (update == default(Product))
             {
-                Products.Add(product);
+                _products.Add(product);
                 return product;
             }
             update.Description = product.Description;
@@ -41,9 +41,9 @@ namespace Web
 
         public void Delete(int id)
         {
-            var prod = Products.SingleOrDefault(p => p.Id == id);
+            var prod = _products.SingleOrDefault(p => p.Id == id);
             if (prod != default(Product))
-                Products.Remove(prod);
+                _products.Remove(prod);
         }
     }
 }

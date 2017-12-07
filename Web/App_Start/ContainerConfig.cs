@@ -1,4 +1,5 @@
-﻿using Container = IoC.Container;
+﻿using IoC;
+using Container = IoC.Container;
 
 namespace Web
 {
@@ -10,7 +11,7 @@ namespace Web
             Container = new IoC.Container();
 
             Container.Register<IUserRepo, UserRepo>();
-            Container.Register<IProductRepo, ProductRepo>();
+            Container.Register<IProductRepo, ProductRepo>(LifeCycleType.Singleton);
         }
     }
 }
